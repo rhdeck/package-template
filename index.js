@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-templateName = "template-package";
+const templateName = "template-package";
 function init(name) {
   if (!name) name = templateName;
   return {
@@ -14,7 +14,7 @@ function write(package, path) {
   if (!path) path = process.cwd();
   if (!fs.existsSync(path)) return false;
   if (fs.statSync(path).isDirectory) {
-    fs.writeFileSync(path + "/package.json");
+    fs.writeFileSync(path + "/package.json", JSON.stringify(package));
     return true;
   }
   return false;
