@@ -7,7 +7,9 @@ function init(name) {
     name: name,
     version: "0.0.1",
     private: true,
-    scripts: {}
+    scripts: {
+      test: 'echo "No test defined"'
+    }
   };
 }
 
